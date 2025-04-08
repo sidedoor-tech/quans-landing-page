@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,10 +35,9 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center">
-            <img 
-              src="/lovable-uploads/1a1442e2-ea71-4c86-b6e2-1fdb2382e2ad.png" 
-              alt="QUANS Logo" 
-              className="h-12 md:h-14" 
+            <Logo 
+              variant={isScrolled ? 'color' : 'negative'}
+              className={isScrolled ? '' : 'filter brightness-0 invert'}
             />
           </a>
 
