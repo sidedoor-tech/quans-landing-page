@@ -5,7 +5,7 @@ import ServiceCard from "./ServiceCard";
 const ServicesSection = () => {
   const services = [
     {
-      title: "TISS – Envio de dados do padrão",
+      title: "Monitoramento TISS - Envio de Dados do Padrão TISS",
       description: "Leitura e qualificação dos dados para cumprir o envio dos dados do Padrão TISS e seu devido impacto no IDSS, garantindo conformidade com os prazos e requisitos.",
       icon: <FileText className="text-quans-green" size={24} />
     },
