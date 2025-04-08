@@ -20,6 +20,10 @@ const Logo: React.FC<LogoProps> = ({
       src={logos[variant]} 
       alt="QUANS Logo" 
       className={`h-12 md:h-14 ${className}`} 
+      onError={(e) => {
+        console.error(`Failed to load logo: ${logos[variant]}`);
+        e.currentTarget.src = logos['color']; // Fallback to color logo
+      }}
     />
   );
 };
