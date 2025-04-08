@@ -1,4 +1,3 @@
-
 import { FileText, Users, Settings, MessageSquare, ShieldCheck } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 
@@ -6,7 +5,7 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Monitoramento TISS - Envio de Dados do Padrão TISS",
-      description: "Leitura e qualificação dos dados para cumprir o envio dos dados do Padrão TISS e seu devido impacto no IDSS, garantindo conformidade com os prazos e requisitos.",
+      description: "Análise e qualificação de dados voltada ao envio preciso das informações no padrão TISS, assegurando conformidade com os prazos regulatórios e impacto positivo nos indicadores do IDSS (índice de desenvolviemnto da saúde suplementar).",
       icon: <FileText className="text-quans-green" size={24} />
     },
     {
