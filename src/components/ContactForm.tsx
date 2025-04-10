@@ -82,7 +82,26 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-quans-navy">Telefone</h3>
-                    <p className="text-gray-600">(00) 0000-0000</p>
+                    <p className="text-gray-600">(21) 98021-5981</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-quans-green/10 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-quans-green">
+                      <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-quans-navy">WhatsApp</h3>
+                    <a 
+                      href="https://wa.me/5521980215981" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-gray-600 hover:text-quans-green transition-colors"
+                    >
+                      (21) 98021-5981
+                    </a>
                   </div>
                 </div>
                 
