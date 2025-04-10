@@ -1,3 +1,4 @@
+
 import { FileText, Users, Settings, MessageSquare, ShieldCheck } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 
@@ -10,7 +11,7 @@ const ServicesSection = () => {
     },
     {
       title: "SIB – Sistema de Informação de Beneficiários",
-      description: "Consultoria especializada nas obrigações legais relacionadas ao SIB, com leitura e qualificação dos dados para transmissão precisa à ANS.",
+      description: "Consultoria especializada no registro das informações do beneficiário, garantindo efetividade na transmissão dos dados e qualidade para nas avaliações acessórias.",
       icon: <Users className="text-quans-green" size={24} />
     },
     {
