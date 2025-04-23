@@ -1,5 +1,4 @@
 
-import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -12,13 +11,13 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-r from-quans-navy to-quans-green pt-16">
-      <div 
+      <div
         className="absolute inset-0 bg-gradient-to-r from-quans-navy/90 to-quans-green/90"
-        style={{ 
-          backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')" 
+        style={{
+          backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')"
         }}
       ></div>
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 text-white animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -29,14 +28,14 @@ const Hero = () => {
               Transforme o cumprimento de obrigações legais em vantagem estratégica para sua operadora de saúde
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
+              <Button
                 onClick={scrollToContact}
                 className="bg-quans-yellow hover:bg-quans-yellow/90 text-quans-navy font-medium px-6 py-3 rounded-md text-base md:text-lg transition-all transform hover:scale-105"
               >
                 Fale com um especialista
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="bg-transparent border-white text-white hover:bg-white/10 font-medium px-6 py-3 rounded-md text-base md:text-lg transition-all"
                 onClick={() => document.getElementById("sobre")?.scrollIntoView({ behavior: "smooth" })}
               >
@@ -44,7 +43,7 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          
+
           <div className="w-full lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative w-full max-w-md">
               <div className="absolute inset-0 bg-gradient-to-tr from-quans-yellow to-quans-green rounded-lg transform rotate-3 opacity-50"></div>
@@ -72,11 +71,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce text-white">
-          <span className="text-sm mb-2">Saiba mais</span>
-          <ArrowDown size={20} />
         </div>
       </div>
     </section>

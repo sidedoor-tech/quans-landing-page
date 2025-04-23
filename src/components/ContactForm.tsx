@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import ky from "ky";
+import { withMask } from 'use-mask-input';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -25,7 +27,8 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
+    ky.post("http://localhost:4000/api/contato", { json: formData })
     // Simulação de envio do formulário
     setTimeout(() => {
       console.log("Form data:", formData);
@@ -33,7 +36,7 @@ const ContactForm = () => {
         title: "Mensagem enviada!",
         description: "Em breve, nossa equipe entrará em contato com você.",
       });
-      
+
       // Reset do formulário
       setFormData({
         name: "",
@@ -42,7 +45,7 @@ const ContactForm = () => {
         company: "",
         message: ""
       });
-      
+
       setIsSubmitting(false);
     }, 1500);
   };
@@ -57,10 +60,10 @@ const ContactForm = () => {
                 Entre em contato
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Estamos prontos para ajudar sua operadora a alcançar o sucesso no cumprimento das obrigações ANS. 
+                Estamos prontos para ajudar sua operadora a alcançar o sucesso no cumprimento das obrigações ANS.
                 Preencha o formulário e nossa equipe entrará em contato.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full bg-quans-green/10 flex items-center justify-center flex-shrink-0">
@@ -73,7 +76,7 @@ const ContactForm = () => {
                     <p className="text-gray-600">contato@quans.com.br</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full bg-quans-green/10 flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-quans-green">
@@ -94,17 +97,17 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-quans-navy">WhatsApp</h3>
-                    <a 
-                      href="https://wa.me/5521980215981" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="https://wa.me/5521980215981"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-600 hover:text-quans-green transition-colors"
                     >
                       (21) 98021-5981
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-full bg-quans-green/10 flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-quans-green">
@@ -119,7 +122,7 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-quans-gray rounded-lg p-6 md:p-8 shadow-lg">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -136,7 +139,7 @@ const ContactForm = () => {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-quans-green"
                   />
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -152,7 +155,7 @@ const ContactForm = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-quans-green"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                       Telefone *
@@ -162,13 +165,14 @@ const ContactForm = () => {
                       name="phone"
                       type="tel"
                       required
+                      ref={withMask(["(99) 9999-9999", "(99) 99999-9999"], { jitMasking: true })}
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-quans-green"
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
                     Empresa *
@@ -183,7 +187,7 @@ const ContactForm = () => {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-quans-green"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Mensagem
@@ -197,7 +201,7 @@ const ContactForm = () => {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-quans-green"
                   ></textarea>
                 </div>
-                
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -205,7 +209,7 @@ const ContactForm = () => {
                 >
                   {isSubmitting ? "Enviando..." : "Enviar mensagem"}
                 </Button>
-                
+
                 <p className="text-xs text-gray-500 text-center">
                   Ao enviar este formulário, você concorda com nossa política de privacidade.
                 </p>
