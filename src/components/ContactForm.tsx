@@ -28,7 +28,7 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    ky.post("http://localhost:4000/api/contato", { json: formData })
+    ky.post("https://app.stg.quans.com.br", { json: formData })
     // Simulação de envio do formulário
     setTimeout(() => {
       console.log("Form data:", formData);
